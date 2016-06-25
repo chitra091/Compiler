@@ -1,0 +1,29 @@
+Files provided:
+
+sample.FP : input Fp file
+FP.lex : lex file
+FP.yacc : yacc file
+sample.mc : mc code output file
+makefile
+FP.h : header file
+cfp.exe : executable file
+
+
+Steps to execute:
+
+1. make makefile
+2. ./cfp.exe sample.mc < sample.fp
+
+
+
+Output:
+Parse tree
+Symbol table
+	1. all the identifiers, constants and function names are stored in the symbol table with type string
+	2. constants alone have the value assigned and have memory set to 999(default value)
+	3. identifiers and function name have memory address assigned. The value x indiciates M[x] that needs to be referred. Identifiers and function name
+	   have value null as i was not able to generate mc code and compute the values	during code generation.
+Output file:
+	mc code is generated for the following FP statements : assignment, read and print.
+	so if the FP code is printing the identifier, the corresponding mc code will output the memory location of the identifier
+	
